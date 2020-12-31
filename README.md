@@ -1,1 +1,1 @@
-# Whisky-Related-Project
+# Whisky-Tasting-Record
