@@ -19,10 +19,6 @@ try:
 except:
     f = open('{}.txt'.format(name), 'w+')
 
-# def brandToSearch():
-#     name = input("Enter Whisky Brand: ")
-#     return name
-
 def getAllNames(list):
     names = driver.find_elements_by_class_name("name")
     for name in names:
