@@ -12,17 +12,20 @@ def get_link():
         image_list.append(image.attrs['src'])
     return image_list
 
-def download(url):
-    global filenum
-    print('Processing {0} url:{1}'.format(filenum,url))
-    img = open('{}.png'.format(filenum),'wb')
+def download(url, name):
+    print('Processing {0} url:{1}'.format(name,url))
+    img = open('ScotchUniverse\{}'.format(name),'wb')
     respone = requests.get(url, stream=True).content
     img.write(respone)
-    filenum += 1
     img.close()
 
 if __name__ == "__main__":
     list = get_link()
-    filenum = 1
-    for i in list:
-        download(i)
+    list2 = []
+    for j in list:
+        if '-300x300' in j:
+            k = j.replace('-300x300', '')
+            list2.append(k)
+    for k in list2:
+        name = k.split('/')[-1]
+        download(k, name)
