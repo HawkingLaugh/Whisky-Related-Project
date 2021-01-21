@@ -3,3 +3,4 @@ Temp.py
 *.png
 WDList_files/
 ScotchUniverse/
+__pycache__/
